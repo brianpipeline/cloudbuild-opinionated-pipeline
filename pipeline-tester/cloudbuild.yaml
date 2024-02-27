@@ -1,0 +1,5 @@
+steps:
+  - name: "ubuntu"
+    args: ["echo", "hey ${_SUB_VALUE}"]
+options:
+  substitutionOption: "ALLOW_LOOSE"

@@ -1,0 +1,15 @@
+steps:
+  - name: "ubuntu"
+    entrypoint: "bash"
+    args:
+      - "-eEuo"
+      - "pipefail"
+      - "-c"
+      - |-
+        #!/bin/sh
+        echo "hey $_SUB_VALUE"
+        exit 1
+substitutions:
+  _SUB_VALUE: whatever
+options:
+  substitutionOption: "ALLOW_LOOSE"
