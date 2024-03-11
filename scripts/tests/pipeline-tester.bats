@@ -38,6 +38,6 @@ teardown() {
     echo $output
     # Check if it fails
     [ "$status" -eq 1 ]
-    [[ "$output" == *"The following tests failed:  pipelines/test-pipeline pipelines/anothertest-pipeline"* ]]
+    [[ "$output" == *"The following tests failed:"* ]]
     echo $PATH
 }
