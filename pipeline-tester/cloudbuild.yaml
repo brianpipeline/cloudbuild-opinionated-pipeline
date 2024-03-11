@@ -1,5 +1,14 @@
 steps:
   - name: "bats/bats"
-    args: ["ls"]
+    entrypoint: "bash"
+    args:
+      - "-eEuo"
+      - "pipefail"
+      - "-c"
+      - |-
+        #!/bin/sh
+        echo "hello"
+        bats
+        echo $?
 options:
   substitutionOption: "ALLOW_LOOSE"
