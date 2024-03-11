@@ -1,5 +1,5 @@
 steps:
-  - name: "ubuntu"
-    args: ["echo", "hey ${_SUB_VALUE}"]
+  - name: "bats/bats"
+    args: ["echo", "hey hello"]
 options:
   substitutionOption: "ALLOW_LOOSE"
