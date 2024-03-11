@@ -26,5 +26,3 @@ pipelineTestSuite() {
     fi
     echo "All tests passed."
 }
-
-# pipelineTestSuite "pipelines"
