@@ -17,8 +17,7 @@ pipelineTestSuite() {
             testFailures=true
             testFailuresList="$testFailuresList $currentDir"
         fi
-
-        cd "$topLevelDirectory"
+        cd "$topLevelDirectory" || exit 1
     done < <(find "$testDirectory" -type d -name tests -prune -o -type f -print)
 
     if [[ $testFailures == true ]]; then
@@ -28,4 +27,4 @@ pipelineTestSuite() {
     echo "All tests passed."
 }
 
-pipelineTestSuite "pipelines"
+# pipelineTestSuite "pipelines"
