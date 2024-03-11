@@ -7,8 +7,6 @@ steps:
       - "-c"
       - |-
         #!/bin/sh
-        echo "hello"
-        bats
-        echo $?
+        bats scripts/tests/pipeline-tester.bats
 options:
   substitutionOption: "ALLOW_LOOSE"
