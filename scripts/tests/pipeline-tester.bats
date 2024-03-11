@@ -1,6 +1,6 @@
 #!/usr/bin/env bats
 
-load /Users/bkurilko/Repos/PipelineStuff/cloudbuild-opinionated-pipeline/scripts/pipeline-tester.sh
+load $(pwd)/scripts/pipeline-tester.sh
 BATS_TEST_DIRNAME=$(pwd)
 export PATH="$BATS_TEST_DIRNAME/stub:$PATH"
 
