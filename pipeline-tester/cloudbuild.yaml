@@ -1,6 +1,5 @@
 steps:
   - name: "bats/bats"
-    args: ["echo", "hey hello"]
+    args: ["ls"]
 options:
   substitutionOption: "ALLOW_LOOSE"
-
