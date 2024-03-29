@@ -10,6 +10,7 @@ pipelineTestSuite() {
 
         cd "$currentDir" || exit 1
 
+        # TODO: Use git diff to check if the actual pipeline file or test files have changed. If so, run the tests. Do this after you get a Dockerfile deploy pipeline working.
         ./tests/submissions.sh
         exit_code=$?
         if [[ $exit_code != 0 ]]; then
