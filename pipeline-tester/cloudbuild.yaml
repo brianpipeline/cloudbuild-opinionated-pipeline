@@ -19,6 +19,6 @@ steps:
       - "-c"
       - |-
         #!/bin/sh
-        ./scripts/pipeline-tester.sh
+        sh scripts/pipeline-tester.sh
 options:
   substitutionOption: "ALLOW_LOOSE"

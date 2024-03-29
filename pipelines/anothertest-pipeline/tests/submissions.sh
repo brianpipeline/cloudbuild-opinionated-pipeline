@@ -1,3 +1,3 @@
 #!/bin/sh
 
-gcloud builds submit . --config anotherTest.yaml --substitutions _SUB_VALUE=wassup
+gcloud builds submit . --config anotherTest.yaml --substitutions _SUB_VALUE=wassup --region=us-central1
