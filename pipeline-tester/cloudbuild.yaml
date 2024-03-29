@@ -1,5 +1,6 @@
 steps:
   - name: "bats/bats"
+    id: "Run bats tests to validate tester script"
     entrypoint: "bash"
     args:
       - "-eEuo"
@@ -8,5 +9,16 @@ steps:
       - |-
         #!/bin/sh
         bats scripts/tests/pipeline-tester.bats
+
+  - name: "gcr.io/cloud-builders/gcloud"
+    id: "Run pipeline tests"
+    entrypoint: "bash"
+    args:
+      - "-eEuo"
+      - "pipefail"
+      - "-c"
+      - |-
+        #!/bin/sh
+        ./scripts/pipeline-tester.sh
 options:
   substitutionOption: "ALLOW_LOOSE"
