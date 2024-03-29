@@ -19,6 +19,7 @@ steps:
       - "-c"
       - |-
         #!/bin/sh
-        sh scripts/pipeline-tester.sh
+        source ./scripts/pipeline-tester.sh
+        pipelineTestSuite "pipelines"
 options:
   substitutionOption: "ALLOW_LOOSE"
