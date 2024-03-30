@@ -1,5 +1,5 @@
 #!/bin/bash
-createPipelines() {
+deployPipelines() {
     pipelineDirectory="$1"
 
     while read -r pipelineYaml; do
@@ -32,5 +32,3 @@ createPipelines() {
 
     echo "All pipelines deployed."
 }
-
-createPipelines "pipelines"
