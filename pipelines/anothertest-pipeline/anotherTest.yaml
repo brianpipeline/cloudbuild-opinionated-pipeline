@@ -17,6 +17,5 @@ steps:
 substitutions:
   _SUB_VALUE2: "something else"
   _REPO_NAME: $(body.repository.name)
-  # Seems like webhook payloads can only be accessed through substitutions like this...
 options:
   substitutionOption: "ALLOW_LOOSE"

@@ -30,7 +30,7 @@ steps:
       - "pipefail"
       - "-c"
       - |-
-        #!/bin/sh
+        #!/bin/bash
         source ./scripts/pipeline-deployer.sh
         deployPipelines "pipelines"
 options:
