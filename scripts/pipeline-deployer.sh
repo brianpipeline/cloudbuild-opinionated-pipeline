@@ -23,10 +23,16 @@ deployPipelines() {
             echo "Pipeline $pipelineName already exists. Updating."
             temp_file=$(mktemp)
             yq eval 'del(.substitutions)' "$pipelineYaml" >"$temp_file"
-            gcloud builds triggers update webhook "$pipelineName" --region="us-central1" --update-substitutions "$substitutionsInOneLine" --inline-config="$temp_file"
+            if ! gcloud builds triggers update webhook "$pipelineName" --region="us-central1" --update-substitutions "$substitutionsInOneLine" --inline-config="$temp_file"; then
+                echo "Failed to update pipeline $pipelineName"
+                exit 1
+            fi
         else
             echo "Creating pipeline $pipelineName"
-            gcloud builds triggers create webhook --name="$pipelineName" --secret="projects/212799175996/secrets/webhook-secret/versions/1" --region="us-central1" --inline-config="$pipelineYaml" --substitutions "$substitutionsInOneLine"
+            if ! gcloud builds triggers create webhook --name="$pipelineName" --secret="projects/212799175996/secrets/webhook-secret/versions/1" --region="us-central1" --inline-config="$pipelineYaml" --substitutions "$substitutionsInOneLine"; then
+                echo "Failed to create pipeline $pipelineName"
+                exit 1
+            fi
         fi
     done < <(find "$pipelineDirectory" -type d -name tests -prune -o -type f -print)
 
