@@ -7,15 +7,15 @@ steps:
       - "-c"
       - |-
         #!/bin/sh
-        echo "hey $REPO_NAME"
+        echo "hey $_REPO_NAME"
         echo "${PROJECT_ID}"
         exit 0
     env:
       - "PROJECT_ID=$PROJECT_ID"
       - "PROJECT_NUMBER=$PROJECT_NUMBER"
-      - "REPO_NAME=$(body.repository.name)"
 
 substitutions:
   _SUB_VALUE2: "something else"
+  _REPO_NAME: $(body.repository.name)
 options:
   substitutionOption: "ALLOW_LOOSE"
