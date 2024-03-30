@@ -30,7 +30,7 @@ teardown() {
     [[ "$output" == *"All pipelines deployed"* ]]
 }
 
-@test "pipelineTestSuite should handle failed build submission" {
+@test "deployPipelines should handle failed build submission" {
     # Stub gcloud builds submit command to return failure
     stub gcloud "exit 1"
     # Run your function
