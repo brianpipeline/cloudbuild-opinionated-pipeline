@@ -8,7 +8,7 @@ steps:
       - "-c"
       - |-
         #!/bin/bash
-        bats scripts/tests/pipeline-tester.bats
+        bats scripts/tests/*
 
   - name: "gcr.io/cloud-builders/gcloud"
     id: "Run pipeline tests"
